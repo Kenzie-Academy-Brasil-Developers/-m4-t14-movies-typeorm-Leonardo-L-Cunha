@@ -39,9 +39,6 @@ const listMoviesServices = async (query:any):Promise<IPagination> => {
 
     const totalPage = Math.ceil(count / perPage)
 
-    
-   
-    
     let orderObj: any = {}
     if (order === 'desc' && !sort) {
         orderObj = null

@@ -12,14 +12,14 @@ const createMovieSchema = z.object({
 
 const returnMovieSchema = createMovieSchema.extend({
     id: z.number(),
-    name: z.string().min(3).max(50),
-    description: z.string().nullish(),
-    duration: z.number(),
-    price: z.number().int()
+   
 })
 const returnAllMovies = z.array(returnMovieSchema)
+
+const updateMovieSchema = createMovieSchema.partial()
 export {
     createMovieSchema,
     returnMovieSchema,
-    returnAllMovies
+    returnAllMovies,
+    updateMovieSchema
 }

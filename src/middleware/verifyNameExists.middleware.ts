@@ -7,7 +7,7 @@ import { AppError } from '../error'
 const verifyNameExists = async (req:Request, res:Response, next:NextFunction):Promise<Response | void> => {
     const { name } = req.body
     const movieRepository  = AppDataSource.getRepository(Movie)
-
+    console.log(name)
     const findName = await movieRepository.find()
 
     const verifyName = findName.find((movie) => {
